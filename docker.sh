@@ -1,3 +1,4 @@
+#! /bin/bash
 #This script will install docker and create a CentOS container
 
 apt update -y
