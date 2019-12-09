@@ -1,0 +1,74 @@
+Docker commands:
+
+Start docker service
+# systemctl start docker
+
+Verify docker version
+# docker version
+
+List all the containers 
+# docker ps -a
+
+List only the running containers
+# docker ps
+
+List the docker images
+# docker images
+
+
+Container commands
+
+Create a container from an image
+Syntax: # docker run -it <image_name:tag> /bin/bash
+Eg:
+# docker run -it ubuntu:latest /bin/bash  (or)
+# docker run -it -d ubuntu                (or)
+# docker run -it -d ubuntu:16.04 /bin/bash
+
+Start, stop , restart a specific container
+# docker container start <container_name>
+# docker container stop <container_name>
+# docker container restart <container_name>
+
+Login to a running container
+# docker exec -it <container_name> /bin/bash
+
+Delete a container
+# docker rm <container_name>
+Note: Stop a container before deleting it
+
+Rename your container
+# docker rename <old_name> <new_name>
+
+
+Docker Images
+
+List images
+# docker images
+
+Create a new image of the container in local machine
+# docker commit <container_id> <docker hub username/image name>
+
+Login to docker hub
+# docker login
+
+Pushing image to docker hub
+# docker push <username/image_name>
+
+Pull an image from docker hub
+#docker pull <image_name>
+
+Docker Volumes
+
+Create a volume
+# docker volume create <vol_name>
+
+Create a container with that volume
+#docker run -it -d --name <container_name> -v <volume_name:/data> <image_name:tag>
+
+Details about containers can be found at 
+/var/lib/docker/containers/
+
+Details about volumes can be found at
+/var/lib/docker/volumes/
+
